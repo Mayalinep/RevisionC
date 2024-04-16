@@ -8,7 +8,7 @@ void ft_swap(int *a, int *b)
     *a  = *b;
     *b  = temp;
 }
-
+/*
 #include <stdio.h>
 int main()
 {
@@ -21,3 +21,4 @@ int main()
     printf("\nAfter swapping:\nnombre 1=%d\nnombre 2=%d\n", nbr1, nbr2);
     return (0);
 }
+*/
