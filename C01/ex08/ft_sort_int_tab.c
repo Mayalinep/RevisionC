@@ -30,6 +30,7 @@ void ft_sort_int_tab(int *tab, int size)
         }
     }
 }
+/*
 #include <stdio.h>
 
 int		main(void)
@@ -39,3 +40,4 @@ int		main(void)
 	printf("Ordre croissant:? ");
 	printf("%d, %d, %d, %d, %d", c[0], c[1], c[2], c[3], c[4]);
 }
+*/
