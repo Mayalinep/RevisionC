@@ -6,7 +6,7 @@
 /*   By: maya <maya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 20:23:39 by maya              #+#    #+#             */
-/*   Updated: 2024/04/22 23:26:42 by maya             ###   ########.fr       */
+/*   Updated: 2024/04/23 21:12:21 by maya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 
     return dst;
 }
+/*
 #include <stdio.h>
-#include <string.h>  // Inclure pour utiliser memmove si pas encore implémenté
-
-void *ft_memmove(void *dst, const void *src, size_t len);  // Prototype de la fonction
+#include <string.h>  
 
 int main() 
 {
@@ -73,4 +72,5 @@ int main()
     
     return 0;
 }
+*/
 
