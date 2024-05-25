@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpelage <mpelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 06:59:02 by maya              #+#    #+#             */
-/*   Updated: 2024/05/25 17:07:08 by mpelage          ###   ########.fr       */
+/*   Created: 2024/05/25 17:06:21 by mpelage           #+#    #+#             */
+/*   Updated: 2024/05/25 17:31:06 by mpelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-size_t	ft_strlcat(char *dest, const char *src, size_t len)
+char	*ft_strdup(const char *s)
 {
-	size_t	i;
-	size_t	j;
-	size_t	initial_len;
+	int		i;
+	int		j;
+	char	*ptr;
 
 	i = 0;
-	j = 0;
-	while (dest[i] != '\0' && i < len)
-		i++;
-	initial_len = i;
-	while (src[j] != '\0' && i < len - 1)
+	j = ft_strlen(s);
+	ptr = (char *)malloc(sizeof(*ptr) * (j + 1));
+	while (i < j)
 	{
-		dest[i] = src[j];
+		ptr[i] = s[i];
 		i++;
-		j++;
 	}
-	if (i < len)
-		dest[i] = '\0';
-	while (src[j] != '\0')
-		j++;
-	return (initial_len + j);
+	ptr[i] = '\0';
+	return (ptr);
 }

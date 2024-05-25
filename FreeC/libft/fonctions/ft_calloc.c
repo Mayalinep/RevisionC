@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpelage <mpelage@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 06:59:02 by maya              #+#    #+#             */
-/*   Updated: 2024/05/25 17:07:08 by mpelage          ###   ########.fr       */
+/*   Created: 2024/05/25 16:21:55 by mpelage           #+#    #+#             */
+/*   Updated: 2024/05/25 17:04:45 by mpelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-size_t	ft_strlcat(char *dest, const char *src, size_t len)
+void	ft_bzero(void *s, size_t n);
+
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	i;
-	size_t	j;
-	size_t	initial_len;
+	size_t	need;
+	void	*ptr;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0' && i < len)
-		i++;
-	initial_len = i;
-	while (src[j] != '\0' && i < len - 1)
+	if (count == 0 || size == 0)
+		return (malloc(0));
+	need = count * size;
+	ptr = malloc(need);
+	if (!ptr)
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		return (NULL);
 	}
-	if (i < len)
-		dest[i] = '\0';
-	while (src[j] != '\0')
-		j++;
-	return (initial_len + j);
+	else
+		ft_bzero(ptr, need);
+	return (ptr);
 }
